@@ -1,1 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Company Team</title>
+</head>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #f4f4f4;
+        margin: 0;
+        padding: 0;
+    }
 
+    .bod-bottom{
+        width: 50%;
+        border-bottom: 3px #9b59b6 dotted;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    
+    /*.banner{
+        border: 1px solid black;
+        width: 100%;
+    }*/
+
+    .banner-right {
+        
+        width: 200px; /* Adjust the width as needed */
+        height: 50px; /* Adjust the height as needed */
+        background-color: #9b59b6;
+        clip-path: polygon(0 0, 85% 0, 100% 50%, 85% 100%, 0 100%);
+        margin-left: inherit;
+        border: 1px soild black;
+    }
+
+    .banner-left {
+        width: 200px; /* Adjust the width as needed */
+        height: 50px; /* Adjust the height as needed */
+        background-color: #9b59b6;
+        clip-path: polygon(15% 0, 100% 0, 100% 100%, 15% 100%, 0 50%);
+        margin-left: 77.2%; /* Adds some margin to the left */
+        border: 1px solid black;
+    }
+    
+    .container {
+        max-width: 800px;
+        margin: 0 auto;
+        padding: 20px;
+        background-color: #fff;
+        box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+    
+    header {
+        text-align: center;
+        padding-bottom: 20px;
+    }
+    
+    .company-name {
+        font-size: 24px;
+        font-weight: bold;
+        color: #9b59b6;
+    }
+    
+    header p {
+        font-size: 14px;
+        color: #333;
+    }
+    
+    .team-section {
+        text-align: center;
+    }
+    
+    .team-section h2 {
+        font-size: 22px;
+        margin-bottom: 10px;
+    }
+    
+    .team-category {
+        font-size: 16px;
+        font-weight: bold;
+        color: #fff;
+        background-color: #9b59b6;
+        display: inline-block;
+        padding: 5px 10px;
+        border-radius: 5px;
+        margin-bottom: 20px;
+    }
+    
+    .team-grid {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 20px;
+    }
+    
+    .team-member {
+        width: 150px;
+        text-align: center;
+    }
+    
+    .team-member img {
+        width: 100px;
+        height: 100px;
+        border-radius: 50%;
+        background-color: #ddd;
+    }
+    
+    .member-name {
+        font-size: 14px;
+        font-weight: bold;
+        margin-top: 10px;
+    }
+    
+    .member-title {
+        font-size: 12px;
+        color: #9b59b6;
+    }
+
+
+</style>
+<body>
+    
+    <div class="container">
+        <div class="banner">
+            <div class="banner-left"></div> <br>
+        </div>
+        <header>
+            <div class="company-name">Company Name</div>
+            <p>Welcome to [Your Company Name], where a dedicated team of professionals works together to bring innovation, creativity, and expertise to the software industry. Get to know the individuals who make our company thrive.</p>
+            <div class="bod-bottom"></div>
+        </header>
+        <section class="team-section">
+            <h2>Meet Our Team</h2>
+            <div class="team-category">Leadership / Management Team</div>
+           
+            <div class="team-grid">
+                <div class="team-member">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b5/Windows_10_Default_Profile_Picture.svg/2048px-Windows_10_Default_Profile_Picture.svg.png" alt="Founder">
+                    <div class="member-name">[ Founder Name ]</div>
+                    <div class="member-title">Founder/CEO</div>
+                </div>
+                <div class="team-member">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b5/Windows_10_Default_Profile_Picture.svg/2048px-Windows_10_Default_Profile_Picture.svg.png" alt="Founder">
+                    <div class="member-name">[ Founder Name ]</div>
+                    <div class="member-title">Founder/CEO</div>
+                </div>
+            </div>
+            <br><br><br>
+            <div class="team-grid">
+
+                <div class="team-member">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b5/Windows_10_Default_Profile_Picture.svg/2048px-Windows_10_Default_Profile_Picture.svg.png" alt="VP">
+                    <div class="member-name">[ VP Name ]</div>
+                    <div class="member-title">VP, Development & Growth</div>
+                </div>
+                <div class="team-member">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b5/Windows_10_Default_Profile_Picture.svg/2048px-Windows_10_Default_Profile_Picture.svg.png" alt="VP">
+                    <div class="member-name">[ VP Name ]</div>
+                    <div class="member-title">VP, Sales & Marketing</div>
+                </div>
+                <div class="team-member">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b5/Windows_10_Default_Profile_Picture.svg/2048px-Windows_10_Default_Profile_Picture.svg.png" alt="VP">
+                    <div class="member-name">[ VP Name ]</div>
+                    <div class="member-title">VP, Finance & Operations</div>
+                </div>
+            </div>
+        </section>
+        
+        <br><br>
+        <!-- Development team -->
+        <section>
+            
+            <header>
+                
+                    <div class="banner">
+                        <div class="banner-right"></div>
+                    </div>
+            <section class="team-section">
+                <div class="team-category">Development Team</div>
+                <br><br>
+                <div class="team-grid">
+                    <div class="team-member">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b5/Windows_10_Default_Profile_Picture.svg/2048px-Windows_10_Default_Profile_Picture.svg.png" alt="Founder">
+                        <div class="member-name">[ Developer Name ]</div>
+                        <div class="member-title">Team Lead</div>
+                    </div>
+                    <div class="team-member">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b5/Windows_10_Default_Profile_Picture.svg/2048px-Windows_10_Default_Profile_Picture.svg.png" alt="Founder">
+                        <div class="member-name">[ Developer Name ]</div>
+                        <div class="member-title">Software Engineer</div>
+                    </div>
+                    <div class="team-member">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b5/Windows_10_Default_Profile_Picture.svg/2048px-Windows_10_Default_Profile_Picture.svg.png" alt="Founder">
+                        <div class="member-name">[Developer Name ]</div>
+                        <div class="member-title">Software Engineer</div>
+                    </div>
+                    <div class="team-member">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b5/Windows_10_Default_Profile_Picture.svg/2048px-Windows_10_Default_Profile_Picture.svg.png" alt="Founder">
+                        <div class="member-name">[ Developer Name ]</div>
+                        <div class="member-title">Software Engineer</div>
+                    </div>
+                </div>
+                <br><br><br>
+                <div class="team-grid">
+    
+                    <div class="team-member">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b5/Windows_10_Default_Profile_Picture.svg/2048px-Windows_10_Default_Profile_Picture.svg.png" alt="VP">
+                        <div class="member-name">[ Developer Name ]</div>
+                        <div class="member-title">Software Engineer</div>
+                    </div>
+                    <div class="team-member">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b5/Windows_10_Default_Profile_Picture.svg/2048px-Windows_10_Default_Profile_Picture.svg.png" alt="VP">
+                        <div class="member-name">[ Developer Name ]</div>
+                        <div class="member-title">Software Engineer</div>
+                    </div>
+                    <div class="team-member">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b5/Windows_10_Default_Profile_Picture.svg/2048px-Windows_10_Default_Profile_Picture.svg.png" alt="VP">
+                        <div class="member-name">[ Developer Name ]</div>
+                        <div class="member-title">Software Engineer</div>
+                    </div>
+                </div>
+        </section>
+        <br><br>
+        <!-- sales marketng -->
+        <section>
+            
+            <header>
+                
+                    <div class="banner">
+                        <div class="banner-left"></div>
+                    </div>
+            <section class="team-section">
+                <div class="team-category">Sales Marketing Team</div>
+                <br><br>
+                <div class="team-grid">
+                    <div class="team-member">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b5/Windows_10_Default_Profile_Picture.svg/2048px-Windows_10_Default_Profile_Picture.svg.png" alt="Founder">
+                        <div class="member-name">[Employee Name]</div>
+                        <div class="member-title">Team Lead</div>
+                    </div>
+                    <div class="team-member">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b5/Windows_10_Default_Profile_Picture.svg/2048px-Windows_10_Default_Profile_Picture.svg.png" alt="Founder">
+                        <div class="member-name">[Employee Name]</div>
+                        <div class="member-title">Sales Officer</div>
+                    </div>
+                    <div class="team-member">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b5/Windows_10_Default_Profile_Picture.svg/2048px-Windows_10_Default_Profile_Picture.svg.png" alt="Founder">
+                        <div class="member-name">[Employee Name]</div>
+                        <div class="member-title">Sales Officer</div>
+                    </div>
+                    <div class="team-member">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b5/Windows_10_Default_Profile_Picture.svg/2048px-Windows_10_Default_Profile_Picture.svg.png" alt="Founder">
+                        <div class="member-name">[Employee Name]</div>
+                        <div class="member-title">Sales Officer</div>
+                    </div>
+                </div>
+                <br><br><br>
+                <div class="team-grid">
+    
+                    <div class="team-member">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b5/Windows_10_Default_Profile_Picture.svg/2048px-Windows_10_Default_Profile_Picture.svg.png" alt="VP">
+                        <div class="member-name">[ Founder Name ]</div>
+                        <div class="member-title">Marketing Officer</div>
+                    </div>
+                    <div class="team-member">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b5/Windows_10_Default_Profile_Picture.svg/2048px-Windows_10_Default_Profile_Picture.svg.png" alt="VP">
+                        <div class="member-name">[ Founder Name ]</div>
+                        <div class="member-title">Marketing Officer</div>
+                    </div>
+                    <div class="team-member">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b5/Windows_10_Default_Profile_Picture.svg/2048px-Windows_10_Default_Profile_Picture.svg.png" alt="VP">
+                        <div class="member-name">[ Founder Name]</div>
+                        <div class="member-title">Marketing Officer</div>
+                    </div>
+                </div>
+                <br>
+                <div class="banner-right"></div>
+        </section>
+
+    </div>
+</body>
+</html>
