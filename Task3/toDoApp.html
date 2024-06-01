@@ -1,1 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TO-DO App</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<style>
+    /* styles.css */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
 
+.container {
+    background: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 500px;
+}
+
+.container h1{
+    text-align: center;
+}
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+header{
+    font-size: 1.5em;
+    margin: 0;
+}
+
+header input {
+    flex-grow: 1;
+    margin-right: 10px;
+    padding: 5px;
+    font-size: 1em;
+}
+
+header button {
+    padding: 6px 12px;
+    font-size: 1em;
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+header button:hover {
+    background-color: #0056b3;
+}
+
+main {
+    max-height: 400px;
+    overflow-y: auto;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+li {
+    background: #f9f9f9;
+    margin: 10px 0;
+    padding: 10px;
+    border-radius: 5px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+li.completed {
+    text-decoration: line-through;
+    color: #999;
+}
+
+li button {
+    margin-left: 10px;
+    padding: 5px;
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+}
+
+li button.edit {
+    color: #ffc107;
+}
+
+li button.delete {
+    color: #dc3545;
+}
+
+li button.complete {
+    color: #28a745;
+}
+
+</style>
+<body>
+    <div class="container">
+        <h1>TO-DO App</h1>
+        <header>
+            <br><br>
+            <input type="text" id="new-task" placeholder="Add a new task">
+           
+            <button id="add-task-btn">Add Task</button>
+        </header>
+        <main>
+            <ul id="task-list"></ul>
+        </main>
+    </div>
+
+    <script>
+        // script.js
+document.addEventListener('DOMContentLoaded', () => {
+    const taskList = document.getElementById('task-list');
+    const newTaskInput = document.getElementById('new-task');
+    const addTaskBtn = document.getElementById('add-task-btn');
+
+    function saveTasks() {
+        const tasks = [];
+        taskList.querySelectorAll('li').forEach(task => {
+            tasks.push({
+                content: task.querySelector('.task-content').textContent,
+                completed: task.classList.contains('completed')
+            });
+        });
+        localStorage.setItem('tasks', JSON.stringify(tasks));
+    }
+
+    function loadTasks() {
+        const tasks = JSON.parse(localStorage.getItem('tasks')) || [];
+        tasks.forEach(task => addTask(task.content, task.completed));
+    }
+
+    function addTask(content, completed = false) {
+        const taskItem = document.createElement('li');
+        taskItem.classList.add('task-item');
+        if (completed) taskItem.classList.add('completed');
+
+        const taskContent = document.createElement('span');
+        taskContent.classList.add('task-content');
+        taskContent.textContent = content;
+
+        const editBtn = document.createElement('button');
+        editBtn.classList.add('edit');
+        editBtn.innerHTML = '✏️';
+        editBtn.addEventListener('click', () => {
+            const newContent = prompt('Edit task:', taskContent.textContent);
+            if (newContent) {
+                taskContent.textContent = newContent;
+                saveTasks();
+            }
+        });
+
+        const completeBtn = document.createElement('button');
+        completeBtn.classList.add('complete');
+        completeBtn.innerHTML = '✔️';
+        completeBtn.addEventListener('click', () => {
+            taskItem.classList.toggle('completed');
+            saveTasks();
+        });
+
+        const deleteBtn = document.createElement('button');
+        deleteBtn.classList.add('delete');
+        deleteBtn.innerHTML = '❌';
+        deleteBtn.addEventListener('click', () => {
+            taskItem.remove();
+            saveTasks();
+        });
+
+        taskItem.appendChild(taskContent);
+        taskItem.appendChild(editBtn);
+        taskItem.appendChild(completeBtn);
+        taskItem.appendChild(deleteBtn);
+        taskList.appendChild(taskItem);
+
+        saveTasks();
+    }
+
+    addTaskBtn.addEventListener('click', () => {
+        const content = newTaskInput.value.trim();
+        if (content) {
+            addTask(content);
+            newTaskInput.value = '';
+        }
+    });
+
+    loadTasks();
+});
+
+    </script>
+</body>
+
+</html>
